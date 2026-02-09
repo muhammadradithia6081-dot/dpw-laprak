@@ -24,3 +24,13 @@ link contoh undangan 2 = https://id.pinterest.com/pin/644085184253537626/
 1.denah lokasi
 2.qr lokasi
 
+## wireflow
+1. Pengguna membuka website
+2. Pengguna melihat siapa yang di undang
+3. Pengguna melihat undangan siapa
+4. Pengguna melihat isi dari undangan tersebut
+5. Pengguna bisa mengisi qr bank yang diberikan dalam isi undangan
+6. Pengguna melihat cerita dari mempelai
+7. Pengguna melihat denah lokasi 
+8. Pengguna bisa nge scan qr lokasi yang telah diberikan
+
