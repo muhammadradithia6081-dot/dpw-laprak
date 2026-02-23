@@ -4,6 +4,7 @@ NIM: 2407126081
 # link contoh undangan
 link contoh undangan 1 = https://www.instagram.com/p/DQ86zTIEmVR
 link contoh undangan 2 = https://id.pinterest.com/pin/644085184253537626/
+link contoh undangan 3 = https://www.rurohma.com/2024/05/isi-dan-contoh-tulisan-undangan-pernikahan-digital.html
 
 # Halaman depan
 1.Judul udangan

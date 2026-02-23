@@ -1,0 +1,97 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body{
+    background-color: #f2f2f2;
+    font-family: Arial, sans-serif;
+    min-height: 100vh;
+}
+
+.flower{
+    position: fixed;
+    width: 280px;
+    z-index: -1;
+    pointer-events: none;
+    opacity: 0.9;
+}
+
+
+.flower-top-left{
+    top: -40px;
+    left: -40px;
+    transform: rotate(180deg);
+}
+
+.flower-top-right{
+    top: -40px;
+    right: -40px;
+    transform: rotate(180deg) scaleX(-1);
+}
+
+
+.flower-bottom-left{
+    bottom: -40px;
+    left: -40px;
+    transform: rotate(90deg);
+}
+
+.flower-bottom-right{
+    bottom: -40px;
+    right: -40px;
+}
+
+.frame{
+    width: 700px;
+    margin: 80px auto;
+    padding: 4px;
+    background: #9c8a3c;
+
+    clip-path: polygon(
+        50% 0%,
+        95% 20%,
+        95% 80%,
+        50% 100%,
+        5% 80%,
+        5% 20%
+    );
+
+    
+   
+}
+
+.frame-shadow{
+    width: 700px;
+    margin: 80px auto;
+    filter: drop-shadow(0 25px 20px rgba(0,0,0,0.35));
+}
+.container{
+    background: #ffffff;
+    padding: 50px 30px;
+    text-align: center;
+
+    clip-path: polygon(
+        50% 0%,
+        95% 20%,
+        95% 80%,
+        50% 100%,
+        5% 80%,
+        5% 20%
+    );
+}
+
+
+.kata-kata{
+    font-family: 'Playfair Script', cursive;
+    margin: 10px 0;
+}
+
+.kata-kata1{
+    font-family: 'Playfair Script', cursive;
+    color: #a79705;
+    margin: 10px 0;
+}
