@@ -1,11 +1,261 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Undangan Pernikahan</title>
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
+    <!-- Decorative Elements -->
+    <div class="decor-line decor-line-1"></div>
+    <div class="decor-line decor-line-2"></div>
+    <div class="decor-dots decor-dots-1"></div>
+    <div class="decor-dots decor-dots-2"></div>
     
+    <div class="flower-pattern"></div>
+
+    <div class="container">
+        <!-- Header Ornament -->
+        <div class="ornament-top">
+            <svg width="120" height="40" viewBox="0 0 120 40">
+                <path d="M10,20 Q30,5 50,20 T90,20 T110,20" stroke="#d4af37" fill="none" stroke-width="2"/>
+                <circle cx="40" cy="20" r="3" fill="#d4af37"/>
+                <circle cx="80" cy="20" r="3" fill="#d4af37"/>
+            </svg>
+        </div>
+
+        <!-- Main Content -->
+        <div class="invitation-card">
+            <div class="card-inner">
+                <div class="card-border">
+                    <div class="card-content">
+                        <h2 class="subtitle">Together with their families</h2>
+                        
+                        <h1 class="groom-name">Muhammad Radithia Fatir</h1>
+                        
+                        <div class="divider">
+                            <span class="divider-text">&</span>
+                        </div>
+                        
+                        <h1 class="bride-name">Hafizah Dini Aqila</h1>
+                        
+                        <p class="invitation-text">
+                            Dengan penuh rasa syukur dan bahagia, kami mengundang<br>
+                            <span class="highlight">Bapak/Ibu/Saudara/i</span><br>
+                            untuk hadir pada acara pernikahan kami
+                        </p>
+                        
+                        <div class="date-box">
+                            <div class="date">
+                                <span class="day">30</span>
+                                <span class="month-year">Maret 2026</span>
+                            </div>
+                            <div class="time">16:00 WIB</div>
+                        </div>
+                        
+                        <div class="venue">
+                            <h3>Hotel Swiss</h3>
+                            <p>Jl. Soekarno-Hatta, Delima, Kec. Tampan, Kota Pekanbaru, Riau 28294. Pekanbaru</p>
+                        </div>
+                        
+                        <a href="#lokasi" class="btn btn-gold" id="lihatLokasiBtn">
+                            <span>Lihat Lokasi</span>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/>
+                                <circle cx="12" cy="9" r="2.5"/>
+                            </svg>
+                        </a>
+                        
+                        <div class="countdown-wrapper">
+                            <div class="countdown">
+                                <div class="time-box">
+                                    <span id="days">00</span>
+                                    <small>Hari</small>
+                                </div>
+                                <div class="time-box">
+                                    <span id="hours">00</span>
+                                    <small>Jam</small>
+                                </div>
+                                <div class="time-box">
+                                    <span id="minutes">00</span>
+                                    <small>Menit</small>
+                                </div>
+                                <div class="time-box">
+                                    <span id="seconds">00</span>
+                                    <small>Detik</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bottom Ornament -->
+        <div class="ornament-bottom">
+            <svg width="120" height="40" viewBox="0 0 120 40">
+                <path d="M10,20 Q30,35 50,20 T90,20 T110,20" stroke="#d4af37" fill="none" stroke-width="2"/>
+                <circle cx="40" cy="20" r="3" fill="#d4af37"/>
+                <circle cx="80" cy="20" r="3" fill="#d4af37"/>
+            </svg>
+        </div>
+    </div>
+
+    <!-- Lokasi Section -->
+    <section id="lokasi" class="section lokasi-section">
+        <div class="section-container">
+            <div class="section-header">
+                <span class="section-subtitle">Lokasi</span>
+                <h2 class="section-title">Tempat Acara</h2>
+                <div class="title-underline"></div>
+            </div>
+            
+            <div class="lokasi-card">
+                <div class="map-container" id="mapContainer">
+                    <!-- Map will be loaded by JavaScript -->
+                    <div class="map-loading" id="mapLoading">
+                        <div class="loading-spinner"></div>
+                        <p>Memuat peta...</p>
+                    </div>
+                    <div class="map-error" id="mapError" style="display: none;">
+                        <p>Gagal memuat peta. Silakan coba lagi.</p>
+                        <button class="btn btn-outline" id="retryMap">Coba Lagi</button>
+                    </div>
+                    <div class="map-wrapper" id="mapWrapper" style="display: none;">
+                        <img src="" alt="Peta Lokasi" class="map-image" id="mapImage">
+                        <div class="map-overlay">
+                            <div class="map-controls">
+                                <button class="map-control-btn" id="zoomIn">+</button>
+                                <button class="map-control-btn" id="zoomOut">-</button>
+                                <button class="map-control-btn" id="resetZoom">↺</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="venue-details">
+                    <h3>Hotel Swiss</h3>
+                    <p class="venue-address">Jl. Soekarno-Hatta, Delima, Kec. Tampan, Kota Pekanbaru, Riau 28294. Pekanbaru</p>
+                    <div class="venue-actions">
+                        <a href="#" class="btn btn-outline" id="openGoogleMaps">
+                            <span>Buka Google Maps</span>
+                        </a>
+                        <button class="btn btn-outline" id="shareLocation">
+                            <span>Bagikan</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Informasi Section -->
+    <section class="section info-section">
+        <div class="section-container">
+            <div class="section-header">
+                <span class="section-subtitle">Informasi</span>
+                <h2 class="section-title">Yang Perlu Diketahui</h2>
+                <div class="title-underline"></div>
+            </div>
+            
+            <div class="info-grid">
+                <div class="info-card">
+                    <div class="info-icon">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#d4af37" stroke-width="2">
+                            <circle cx="12" cy="8" r="4"/>
+                            <path d="M5 14h14v6H5z"/>
+                        </svg>
+                    </div>
+                    <h3>Dresscode</h3>
+                    <p>Gold & White</p>
+                </div>
+                
+                <div class="info-card">
+                    <div class="info-icon">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#d4af37" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"/>
+                            <polyline points="12 6 12 12 16 14"/>
+                        </svg>
+                    </div>
+                    <h3>Waktu</h3>
+                    <p>Hadir 30 menit sebelum acara</p>
+                </div>
+                
+                <div class="info-card">
+                    <div class="info-icon">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#d4af37" stroke-width="2">
+                            <path d="M18 8h1a4 4 0 0 1 0 8h-1"/>
+                            <path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/>
+                            <line x1="6" y1="1" x2="6" y2="4"/>
+                            <line x1="10" y1="1" x2="10" y2="4"/>
+                            <line x1="14" y1="1" x2="14" y2="4"/>
+                        </svg>
+                    </div>
+                    <h3>Makanan</h3>
+                    <p>Dilarang membawa makanan dari luar</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- RSVP Section -->
+    <section class="section rsvp-section">
+        <div class="section-container">
+            <div class="section-header">
+                <span class="section-subtitle">RSVP</span>
+                <h2 class="section-title">Konfirmasi Kehadiran</h2>
+                <div class="title-underline"></div>
+            </div>
+            
+            <div class="rsvp-card">
+                <form class="rsvp-form" id="rsvpForm">
+                    <div class="form-group">
+                        <input type="text" id="name" placeholder=" " required>
+                        <label for="name">Nama Lengkap</label>
+                    </div>
+                    
+                    <div class="form-group">
+                        <select id="attendance" required>
+                            <option value="" disabled selected></option>
+                            <option value="hadir">Hadir</option>
+                            <option value="tidak">Tidak Hadir</option>
+                        </select>
+                        <label for="attendance">Konfirmasi Kehadiran</label>
+                    </div>
+                    
+                    <div class="form-group">
+                        <input type="number" id="guests" min="1" placeholder=" " required>
+                        <label for="guests">Jumlah Tamu</label>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-gold btn-full">
+                        Kirim Konfirmasi
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal for sharing -->
+    <div class="modal" id="shareModal">
+        <div class="modal-content">
+            <h3>Bagikan Lokasi</h3>
+            <p>Salin link berikut:</p>
+            <div class="share-link">
+                <input type="text" id="shareLink" readonly value="https://maps.google.com/?q=Hotel+Swiss+Pekanbaru">
+                <button class="btn btn-outline" id="copyLink">Salin</button>
+            </div>
+            <button class="btn btn-gold" id="closeModal">Tutup</button>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>© 2026 • Undangan Pernikahan</p>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
